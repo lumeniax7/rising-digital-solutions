@@ -6,9 +6,14 @@
 <title>RISING DIGITAL SOLUTIONS – Solutions numériques et IA, Agbelouvé (Togo)</title>
 <meta name="description" content="Création graphique, sites web, IA, automatisation, maintenance informatique, impression et formation. Demandez votre devis sur WhatsApp. Agbelouvé, Togo et au-delà.">
 <meta name="theme-color" content="#161E6B">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rising-digital-solutions.yesborntoshine.workers.dev/">
 <meta property="og:title" content="RISING DIGITAL SOLUTIONS – Transformer les idées en réalisations">
 <meta property="og:description" content="Architecte de solutions numériques et IA. Agbelouvé, Togo et au-delà.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://rising-digital-solutions.yesborntoshine.workers.dev/">
+<meta property="og:image" content="https://rising-digital-solutions.yesborntoshine.workers.dev/img/logo.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +143,43 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 .lb-bar .btn{flex:1;justify-content:center;min-height:46px;padding:0 10px;font-size:14px;white-space:nowrap}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stack button{animation:none}}
+
+/* Conversion et réassurance */
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #CDD4F4;border-radius:999px;background:#F7F8FF;color:var(--navy);font-size:13px;font-weight:600}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:#28A36A}
+.trust-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;color:#5B6285;font-size:14px}
+.trust-row span{display:inline-flex;align-items:center;gap:6px}
+.trust-row span::before{content:"✓";color:#28A36A;font-weight:700}
+.offer-section{padding:48px 0 64px;background:#fff;border-top:1px solid var(--line)}
+.offer-grid,.proof-grid,.price-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+.offer-card,.proof-card,.price-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;box-shadow:0 8px 24px rgba(14,18,56,.05)}
+.offer-card{position:relative;overflow:hidden}
+.offer-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--violet)}
+.offer-card h3,.proof-card h3{font-size:1.05rem;margin-bottom:8px}
+.offer-card p,.proof-card p{font-size:14px}
+.offer-card .mini{display:block;margin-top:12px;color:var(--violet);font-size:13px;font-weight:600}
+.proof-grid{grid-template-columns:1fr}
+.proof-card strong{display:block;color:var(--navy);font:700 1.8rem Sora,sans-serif;margin-bottom:4px}
+.price-section{background:var(--mist)}
+.price-grid{grid-template-columns:1fr}
+.price-card{display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--violet);box-shadow:0 12px 32px rgba(107,63,227,.14)}
+.price-card .label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--violet);font-weight:700}
+.price-card h3{font-size:1.15rem;margin:7px 0 8px}
+.price{color:var(--navy);font:700 1.45rem Sora,sans-serif;margin:8px 0}
+.price-card ul{padding-left:18px;margin:12px 0 20px;font-size:14px;color:var(--text)}
+.price-card .btn{margin-top:auto;justify-content:center}
+.note-box{margin-top:22px;padding:14px 16px;border-left:3px solid var(--blue);background:#fff;border-radius:8px;font-size:14px;color:#5B6285}
+.quick-start{background:var(--navy);color:#DCE0FF}
+.quick-start h2{color:#fff}
+.quick-start .intro{color:#DCE0FF}
+.quick-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px}
+.quick-step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;padding:18px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(255,255,255,.06)}
+.quick-step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);font-family:Sora,sans-serif}
+.quick-step h3{color:#fff;font-size:1rem;margin-bottom:4px}
+.quick-step p{font-size:14px}
+@media(min-width:700px){.offer-grid{grid-template-columns:repeat(2,1fr)}.proof-grid{grid-template-columns:repeat(3,1fr)}.price-grid{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(3,1fr)}.quick-step{display:block}.quick-step b{margin-bottom:14px}}
+@media(min-width:1000px){.offer-grid{grid-template-columns:repeat(5,1fr)}.price-grid{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
@@ -147,7 +189,7 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
   <div class="wrap bar-in">
     <a class="brand" href="#accueil"><img src="img/logo.png" alt="Logo RISING DIGITAL SOLUTIONS" width="46" height="46"><span>RISING<small>DIGITAL SOLUTIONS</small></span></a>
     <nav id="nav" aria-label="Navigation principale">
-      <a href="#services">Services</a><a href="#pour-qui">Pour qui</a><a href="#methode">Méthode</a><a href="#a-propos">À propos</a><a href="#contact">Contact</a>
+      <a href="#offres">Offres</a><a href="#pour-qui">Pour qui</a><a href="#preuves">Preuves</a><a href="#tarifs">Tarifs</a><a href="#contact">Contact</a>
     </nav>
     <a class="btn btn-wa head-cta" data-wa="Bonjour, je souhaite obtenir un devis." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Demander un devis</a>
     <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
@@ -158,18 +200,34 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 <section class="sec hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>Architecte de solutions numériques et IA</h1>
-      <p class="tagline">Transformer les idées en réalisations.</p>
-      <p class="lead">Identité visuelle, sites web, intelligence artificielle, maintenance informatique, impression et formation. Basés à Agbelouvé, au Togo, nous travaillons avec les particuliers, entrepreneurs, PME, ONG, associations et églises, au Togo et au-delà.</p>
+      <span class="kicker">Solutions numériques concrètes pour les activités locales</span>
+      <h1>Un site, une image et des outils qui travaillent pour vous</h1>
+      <p class="tagline">Clarifier votre offre. Inspirer confiance. Passer à l'action.</p>
+      <p class="lead">Nous aidons les entrepreneurs, PME, ONG et organisations à mieux se présenter, mieux communiquer et gagner du temps grâce au web, au design, à l'IA et à l'accompagnement numérique.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" data-wa="Bonjour, je souhaite obtenir un devis." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Demander un devis sur WhatsApp</a>
-        <a class="btn btn-line" href="#services">Voir les services</a>
+        <a class="btn btn-wa" data-wa="Bonjour, je souhaite recevoir un devis indicatif pour mon projet." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Recevoir un devis indicatif</a>
+        <a class="btn btn-line" href="#offres">Voir les offres</a>
       </div>
+      <div class="trust-row"><span>Réponse rapide sur WhatsApp</span><span>Agbelouvé, Togo</span><span>À distance possible</span></div>
     </div>
     <div class="stack" aria-label="Aperçu de nos affiches">
       <button data-id="intelligence-artificielle"><img src="img/thumb/intelligence-artificielle.webp" alt="Affiche Intelligence artificielle" width="560" height="840"></button>
       <button data-id="creation-site-application"><img src="img/thumb/creation-site-application.webp" alt="Affiche Création de site et application" width="560" height="840"></button>
       <button data-id="solutions-ong-associations"><img src="img/thumb/solutions-ong-associations.webp" alt="Affiche Solutions pour ONG, associations et églises" width="560" height="840"></button>
+    </div>
+  </div>
+</section>
+
+<section class="offer-section" id="offres">
+  <div class="wrap">
+    <h2>Des offres lisibles, selon votre objectif</h2>
+    <p class="intro">Vous n'avez pas besoin de connaître le vocabulaire technique. Choisissez le résultat que vous voulez obtenir ; nous vous orientons vers le bon format.</p>
+    <div class="offer-grid">
+      <article class="offer-card"><h3>Être trouvé et contacté</h3><p>Site vitrine clair, rapide et adapté au mobile pour présenter vos services et recevoir des demandes.</p><span class="mini">Site web · page d'accueil · contact</span></article>
+      <article class="offer-card"><h3>Paraître professionnel</h3><p>Logo, identité visuelle, affiches et supports cohérents pour inspirer confiance dès le premier regard.</p><span class="mini">Identité · visuels · documents</span></article>
+      <article class="offer-card"><h3>Gagner du temps</h3><p>Automatisations, IA et outils numériques simples pour réduire les tâches répétitives.</p><span class="mini">IA · automatisation · organisation</span></article>
+      <article class="offer-card"><h3>Rester opérationnel</h3><p>Assistance informatique, réseaux et accompagnement pour éviter les blocages du quotidien.</p><span class="mini">Maintenance · connectivité · dépannage</span></article>
+      <article class="offer-card"><h3>Monter en compétence</h3><p>Formation pratique, progressive et adaptée à votre niveau, votre équipe ou votre organisation.</p><span class="mini">Formation · coaching · transmission</span></article>
     </div>
   </div>
 </section>
@@ -197,9 +255,49 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
   </div>
 </section>
 
+<section class="sec" id="preuves">
+  <div class="wrap">
+    <h2>Ce que vous pouvez vérifier avant de commencer</h2>
+    <p class="intro">Nous ne promettons pas de résultats imaginaires. Voici ce qui est concret et vérifiable dans chaque collaboration.</p>
+    <div class="proof-grid">
+      <article class="proof-card"><strong>01</strong><h3>Un livrable visible</h3><p>Vous recevez un support concret : page web, visuel, document, outil ou session de formation, selon l'offre choisie.</p></article>
+      <article class="proof-card"><strong>02</strong><h3>Un périmètre défini</h3><p>Le devis précise ce qui est inclus, les étapes, les éléments à fournir et les limites de la prestation.</p></article>
+      <article class="proof-card"><strong>03</strong><h3>Des exemples à consulter</h3><p>Le catalogue ci-dessous présente des exemples de livrables et de formats que nous pouvons adapter à votre activité.</p></article>
+    </div>
+    <div class="note-box"><b>Important :</b> les affiches du catalogue illustrent des types de livrables. Les références clients, témoignages et résultats chiffrés seront ajoutés au fur et à mesure des projets autorisés à être publiés.</div>
+  </div>
+</section>
+
+<section class="sec price-section" id="tarifs">
+  <div class="wrap">
+    <h2>Tarifs indicatifs pour se situer</h2>
+    <p class="intro">Ces fourchettes permettent de préparer votre budget. Le prix final dépend du contenu, du niveau de personnalisation et du délai.</p>
+    <div class="price-grid">
+      <article class="price-card featured"><span class="label">Le plus demandé</span><h3>Site vitrine</h3><div class="price">150 000 – 350 000 F CFA</div><ul><li>Présentation de l'activité</li><li>Services et appels à l'action</li><li>Version mobile</li><li>Contact WhatsApp ou e-mail</li></ul><a class="btn btn-wa" data-wa="Bonjour, je souhaite un devis indicatif pour un site vitrine." href="#" target="_blank" rel="noopener">Parler du site</a></article>
+      <article class="price-card"><span class="label">Visibilité</span><h3>Identité et supports</h3><div class="price">25 000 – 150 000 F CFA</div><ul><li>Affiche ou visuel : dès 25 000 F</li><li>Logo et identité : sur devis</li><li>Documents professionnels</li><li>Formats prêts à publier ou imprimer</li></ul><a class="btn btn-line" data-wa="Bonjour, je souhaite un devis indicatif pour mon identité visuelle ou mes supports." href="#" target="_blank" rel="noopener">Demander un devis</a></article>
+      <article class="price-card"><span class="label">Productivité</span><h3>IA et automatisation</h3><div class="price">75 000 – 250 000 F CFA</div><ul><li>Diagnostic du besoin</li><li>Outil ou automatisation ciblée</li><li>Paramétrage et prise en main</li><li>Évolution possible par étapes</li></ul><a class="btn btn-line" data-wa="Bonjour, je souhaite un devis indicatif pour une solution IA ou automatisation." href="#" target="_blank" rel="noopener">Décrire le besoin</a></article>
+      <article class="price-card"><span class="label">Accompagnement</span><h3>Formation et assistance</h3><div class="price">10 000 – 50 000 F CFA</div><ul><li>Session ou intervention ciblée</li><li>Support adapté à votre niveau</li><li>Assistance informatique</li><li>Forfait récurrent possible</li></ul><a class="btn btn-line" data-wa="Bonjour, je souhaite connaître le tarif pour une formation ou une assistance." href="#" target="_blank" rel="noopener">Poser une question</a></article>
+    </div>
+    <div class="note-box"><b>Les montants sont indicatifs :</b> ils ne constituent pas un engagement automatique. Un devis clair est envoyé après quelques questions sur votre objectif, vos contenus et votre délai.</div>
+  </div>
+</section>
+
+<section class="sec quick-start">
+  <div class="wrap">
+    <h2>Commencer en moins de 3 minutes</h2>
+    <p class="intro">Pas besoin de préparer un cahier des charges. Envoyez simplement les informations que vous avez.</p>
+    <div class="quick-grid">
+      <article class="quick-step"><b>1</b><div><h3>Choisissez votre objectif</h3><p>Être visible, vendre, automatiser, imprimer, vous former ou résoudre un problème.</p></div></article>
+      <article class="quick-step"><b>2</b><div><h3>Envoyez 4 informations</h3><p>Votre activité, le résultat souhaité, votre délai et votre budget indicatif si vous en avez un.</p></div></article>
+      <article class="quick-step"><b>3</b><div><h3>Recevez une orientation</h3><p>Nous vous répondons sur WhatsApp avec la bonne offre, les prochaines étapes et une estimation.</p></div></article>
+    </div>
+    <div class="cta-row"><a class="btn btn-wa" data-wa="Bonjour, je veux démarrer un projet. Mon activité est : . Mon objectif est : . Mon délai est : . Mon budget indicatif est : ." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Démarrer maintenant</a></div>
+  </div>
+</section>
+
 <section class="sec mist" id="methode">
   <div class="wrap">
-    <h2>Comment ça se passe</h2>
+    <h2>Une méthode simple et sans surprise</h2>
     <ol class="steps">
       <li><h3>Vous écrivez</h3><p>Décrivez votre besoin sur WhatsApp, ou envoyez l'affiche du service qui vous intéresse.</p></li>
       <li><h3>Nous échangeons</h3><p>Nous clarifions votre projet, vos attentes et votre budget.</p></li>
@@ -238,7 +336,7 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 </section>
 </main>
 
-<footer><div class="wrap">© 2026 RISING DIGITAL SOLUTIONS. Agbelouvé, Togo. Transformer les idées en réalisations.</div></footer>
+<footer><div class="wrap">© 2026 RISING DIGITAL SOLUTIONS · Agbelouvé, Togo · Tarifs indicatifs à confirmer sur devis.</div></footer>
 
 <div class="bottom-bar"><a class="btn btn-wa" data-wa="Bonjour, je souhaite obtenir un devis." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Demander un devis sur WhatsApp</a></div>
 

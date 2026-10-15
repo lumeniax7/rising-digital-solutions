@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rising-digital-solutions.yesborntoshine.workers.dev/sitemap.xml
