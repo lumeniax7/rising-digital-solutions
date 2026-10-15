@@ -1,0 +1,12 @@
+SITE RISING DIGITAL SOLUTIONS - mise en ligne gratuite
+
+1. Cloudflare Pages (recommandé) : créez un compte gratuit sur pages.cloudflare.com,
+   choisissez "Upload assets" (envoi direct), glissez le contenu de ce dossier. Le site est en ligne
+   sur une adresse gratuite en .pages.dev, avec HTTPS.
+2. Alternative : GitHub Pages (dépôt public, puis Settings > Pages).
+
+Modifier le site
+- Numéros et e-mail : dans index.html, cherchez 22893392515 (WhatsApp principal) et yesborntoshine@gmail.com.
+- Ajouter une affiche : mettez la version web dans img/thumb/ (560 px de large) et img/full/ (1024 px), format .webp,
+  puis ajoutez une ligne dans la liste S (début du script) : ["nom-du-fichier","Titre","famille"].
+  Familles : ident, web, ia, info, docs, print, form.
