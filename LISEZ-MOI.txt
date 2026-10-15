@@ -1,12 +1,28 @@
-SITE RISING DIGITAL SOLUTIONS - mise en ligne gratuite
+SITE RISING DIGITAL SOLUTIONS
 
-1. Cloudflare Pages (recommandé) : créez un compte gratuit sur pages.cloudflare.com,
-   choisissez "Upload assets" (envoi direct), glissez le contenu de ce dossier. Le site est en ligne
-   sur une adresse gratuite en .pages.dev, avec HTTPS.
-2. Alternative : GitHub Pages (dépôt public, puis Settings > Pages).
+Structure
+- index.html : page principale, catalogue détaillé, tarifs indicatifs, FAQ et assistant.
+- img/thumb/ : miniatures affichées dans le catalogue.
+- img/full/ : images agrandies dans la fenêtre de détail.
+- robots.txt et sitemap.xml : référencement.
 
-Modifier le site
-- Numéros et e-mail : dans index.html, cherchez 22893392515 (WhatsApp principal) et yesborntoshine@gmail.com.
-- Ajouter une affiche : mettez la version web dans img/thumb/ (560 px de large) et img/full/ (1024 px), format .webp,
-  puis ajoutez une ligne dans la liste S (début du script) : ["nom-du-fichier","Titre","famille"].
-  Familles : ident, web, ia, info, docs, print, form.
+Contenu des services
+- Les services sont définis dans le tableau S du script de index.html.
+- Chaque ligne contient : identifiant image, titre, famille, objectif, livrable et budget indicatif.
+- Pour ajouter un service, ajoutez la même image .webp dans img/thumb/ et img/full/, puis ajoutez une ligne complète dans S.
+- Familles : ident, web, ia, info, docs, print, form.
+
+Coordonnées
+- Numéro WhatsApp principal : 22893392515 dans index.html.
+- Second numéro d'appel : +22890681092.
+- E-mail : yesborntoshine@gmail.com.
+- Si les coordonnées changent, modifier aussi les données structurées Schema.org et la section contact.
+
+Tarifs
+- Les montants affichés sont indicatifs et doivent être confirmés avant publication si les tarifs commerciaux évoluent.
+- Ne pas présenter un prix indicatif comme une garantie ou un devis ferme.
+
+Publication
+- Le dépôt GitHub contient la version source publique.
+- Le Worker Cloudflare sert la version publiée avec un cache versionné basé sur le commit Git.
+- Après chaque modification : git add, commit, push, puis mettre à jour la version du commit dans le Worker Cloudflare pour invalider le cache.
