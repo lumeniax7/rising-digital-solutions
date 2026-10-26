@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="a091d7d7-e5f2-4a96-abc2-d73d1dc09b7d"></script>
 <title>RISING DIGITAL SOLUTIONS – Solutions numériques et IA, Agbelouvé (Togo)</title>
 <meta name="description" content="Création graphique, sites web, IA, automatisation, maintenance informatique, impression et formation. Demandez votre devis sur WhatsApp. Agbelouvé, Togo et au-delà.">
 <meta name="theme-color" content="#161E6B">
@@ -208,12 +209,14 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 @media(min-width:900px){.brief-wrap{grid-template-columns:.8fr 1.2fr}.brief-form{padding:28px}}
 
 .service-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px;align-items:center}
-.service-actions .btn{min-height:42px;padding:0 13px;font-size:14px}
+.service-actions .btn{min-height:48px;padding:0 13px;font-size:14px}
 .share-btn{min-height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 14px Inter,system-ui,sans-serif;cursor:pointer}
-.share-panel{display:none;flex-wrap:wrap;gap:6px;margin-top:8px;padding:9px;border:1px solid var(--line);border-radius:10px;background:#fff}
-.share-panel.open{display:flex}
-.share-panel a,.share-panel button{min-height:34px;padding:0 9px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 12px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.share-panel{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.share-panel[hidden]{display:none}
+.share-panel a,.share-panel button{min-height:42px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 12px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer}
 .share-panel a:hover,.share-panel button:hover{border-color:var(--violet);color:var(--violet)}
+.service-action-note{margin-top:7px;color:#686D82;font-size:11px;line-height:1.45}
+.share-feedback{flex-basis:100%;min-height:16px;color:#565C70;font-size:11px}
 .service-route{display:block;margin-top:8px;font-size:12px;color:#5B6285}
 .premium-section{background:linear-gradient(135deg,#f7f8ff 0%,#fff 62%);border-top:1px solid var(--line)}
 .premium-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
@@ -228,7 +231,7 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 .lb-actions .btn{flex:1;justify-content:center;min-width:190px}
 .mobile-hint{margin-top:10px;font-size:13px;color:#5B6285}
 @media(min-width:700px){.premium-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:699px){.poster{aspect-ratio:4/5}.poster img{object-fit:cover}.grid h3{font-size:16px}.service-actions{display:grid;grid-template-columns:1fr 1fr}.service-actions .btn,.share-btn{width:100%;justify-content:center}.share-panel{grid-column:1/-1}}
+@media(max-width:699px){.grid{grid-template-columns:1fr}.poster{aspect-ratio:2/3}.poster img{object-fit:contain}.grid h3{font-size:16px}.service-actions{display:grid;grid-template-columns:1fr}.service-actions .btn,.share-btn{width:100%;justify-content:center}.share-panel{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -426,7 +429,7 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 </main>
 
 <section class="legal" id="informations">
-  <div class="wrap"><p><b>Informations :</b> RISING DIGITAL SOLUTIONS · Agbelouvé, Togo · yesborntoshine@gmail.com · +228 93 39 25 15 / +228 90 68 10 92.</p><p>Les tarifs présentés sont indicatifs. Les échanges et l’envoi des demandes se font via les services de contact choisis par le visiteur. Pour demander une correction ou une suppression d’une information vous concernant, écrivez à l’adresse e-mail ci-dessus.</p></div>
+  <div class="wrap"><p><b>Informations :</b> RISING DIGITAL SOLUTIONS · Agbelouvé, Togo · yesborntoshine@gmail.com · +228 93 39 25 15 / +228 90 68 10 92.</p><p>Les tarifs présentés sont indicatifs. Les échanges et l’envoi des demandes se font via les services de contact choisis par le visiteur. Ce site utilise Umami pour mesurer sa fréquentation ; le contenu du mini-brief n’est pas transmis à cet outil. Pour demander une correction ou une suppression d’une information vous concernant, écrivez à l’adresse e-mail ci-dessus.</p></div>
 </section>
 
 <footer><div class="wrap">© 2026 RISING DIGITAL SOLUTIONS · Agbelouvé, Togo · Tarifs indicatifs à confirmer sur devis.</div></footer>
@@ -442,7 +445,7 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
     <a class="btn btn-wa" id="lbA" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Démarrer sur WhatsApp</a>
     <button class="icon-btn" id="lbN" aria-label="Affiche suivante">›</button>
   </div>
-  <div class="lb-actions"><button class="share-btn" id="lbShare" type="button">Partager cette fiche</button><a class="btn btn-line" id="lbCopy" href="#">Copier le lien</a></div>
+  <div class="lb-actions"><button class="share-btn" id="lbShare" type="button">Partager cette fiche</button><button class="btn btn-line" id="lbCopy" type="button">Copier le lien</button></div>
 </dialog>
 
 <script>
@@ -481,24 +484,30 @@ const S=[
 const CONTACT=["contactez-nous","Contactez-nous"];
 const $=id=>document.getElementById(id);
 const leadMessage=(t,v,b)=>`Bonjour, je souhaite un devis pour le service : ${t}.
-
-Mon objectif : 
-Mon délai souhaité : 
-Contenus/images déjà disponibles : 
-Budget indicatif : ${b||"à préciser"}
+Mon objectif : [à préciser en quelques mots]
+Mon délai : [facultatif]
+Mon budget (facultatif) : [à préciser]
+Budget indicatif affiché : ${b||"sur devis"}
 
 Livrable envisagé : ${v||"à préciser"}`;
 const msg=(t,v,b)=>wa(leadMessage(t,v,b));
 const serviceUrl=id=>`${location.origin}${location.pathname}?service=${encodeURIComponent(id)}#services`;
-const shareLinks=(id,t)=>{const u=encodeURIComponent(serviceUrl(id)),title=encodeURIComponent(`${t} | RISING DIGITAL SOLUTIONS`);return {WhatsApp:wa(`Découvrez ce service : ${t}\n${serviceUrl(id)}`),Facebook:`https://www.facebook.com/sharer/sharer.php?u=${u}`,LinkedIn:`https://www.linkedin.com/sharing/share-offsite/?url=${u}`,X:`https://twitter.com/intent/tweet?text=${title}&url=${u}`,Telegram:`https://t.me/share/url?url=${u}&text=${title}`};};
+const shareLinks=(id,t)=>{
+  const page=serviceUrl(id),u=encodeURIComponent(page),title=encodeURIComponent(`${t} | RISING DIGITAL SOLUTIONS`),media=encodeURIComponent(`${location.origin}/img/full/${id}.webp`);
+  return {WhatsApp:wa(`Découvrez ce service : ${t}\n${page}`),Facebook:`https://www.facebook.com/sharer/sharer.php?u=${u}`,LinkedIn:`https://www.linkedin.com/sharing/share-offsite/?url=${u}`,X:`https://twitter.com/intent/tweet?text=${title}&url=${u}`,Telegram:`https://t.me/share/url?url=${u}&text=${title}`,Threads:`https://www.threads.net/intent/post?text=${title}%20${u}`,Pinterest:`https://www.pinterest.com/pin/create/button/?url=${u}&media=${media}&description=${title}`,"E-mail":`mailto:?subject=${encodeURIComponent(`Service à découvrir : ${t}`)}&body=${encodeURIComponent(`Je vous partage ce service : ${page}`)}`};
+};
 let active=null,cur=[],i=0;
 
 document.querySelectorAll("[data-wa]").forEach(a=>a.href=wa(a.dataset.wa));
 
-function sharePanel(id,t){const links=shareLinks(id,t);return `<div class="share-panel" data-share-panel="${id}"><a href="${links.WhatsApp}" target="_blank" rel="noopener">WhatsApp</a><a href="${links.Facebook}" target="_blank" rel="noopener">Facebook</a><a href="${links.LinkedIn}" target="_blank" rel="noopener">LinkedIn</a><a href="${links.X}" target="_blank" rel="noopener">X</a><a href="${links.Telegram}" target="_blank" rel="noopener">Telegram</a><button type="button" data-copy-share="${id}">Copier</button></div>`}
+function sharePanel(id,t){
+  const links=shareLinks(id,t);
+  const anchors=Object.entries(links).map(([name,url])=>`<a href="${url.replace(/&/g,"&amp;")}" target="_blank" rel="noopener noreferrer">${name}</a>`).join("");
+  return `<div class="share-panel" id="share-${id}" data-share-panel="${id}" role="group" aria-label="Options de partage pour ${t}" hidden>${anchors}<button type="button" data-copy-share="${id}">Copier le lien</button><button type="button" data-native-share="${id}">Autres applications</button><span class="share-feedback" aria-live="polite"></span></div>`;
+}
 function render(label){
   const list=S.filter(s=>!active||active.includes(s[2]));
-  $("grid").innerHTML=list.map(([id,t,cat,d,v,b])=>`<li><button class="poster" data-id="${id}" aria-label="Voir les détails de ${t}"><img src="img/thumb/${id}.webp" alt="Illustration du service : ${t}. ${d}" width="560" height="840" loading="lazy" decoding="async"></button><h3>${t}</h3><p class="service-desc">${d}</p><p class="service-meta"><b>Livrable :</b> ${v}<br><b>Budget :</b> ${b}</p><div class="service-actions"><a class="btn btn-wa" href="${msg(t,v,b)}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Recevoir un devis</a><button class="share-btn" type="button" data-share-id="${id}" aria-expanded="false">Partager</button></div>${sharePanel(id,t)}<a class="service-route" href="${serviceUrl(id)}">Lien direct de cette fiche</a></li>`).join("");
+  $("grid").innerHTML=list.map(([id,t,cat,d,v,b])=>`<li><button class="poster" data-id="${id}" aria-label="Voir les détails de ${t}"><img src="img/thumb/${id}.webp" alt="Illustration du service : ${t}. ${d}" width="560" height="840" loading="lazy" decoding="async"></button><h3>${t}</h3><p class="service-desc">${d}</p><p class="service-meta"><b>Livrable :</b> ${v}<br><b>Budget :</b> ${b}</p><div class="service-actions"><a class="btn btn-wa" href="${msg(t,v,b)}" aria-label="Recevoir un devis WhatsApp pour ${t}" target="_blank" rel="noopener noreferrer"><svg><use href="#wa"/></svg>Recevoir un devis</a><button class="share-btn" type="button" data-share-id="${id}" aria-controls="share-${id}" aria-expanded="false">Partager</button></div><p class="service-action-note">WhatsApp s’ouvre avec un brouillon : vous le relisez avant de l’envoyer.</p>${sharePanel(id,t)}<a class="service-route" href="${serviceUrl(id)}">Lien direct de cette fiche</a></li>`).join("");
   $("chips").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(active?(active.length===1&&b.dataset.k===active[0]):b.dataset.k==="all")));
   const n=$("note");
   n.hidden=!label;
@@ -514,7 +523,7 @@ if(deepService&&S.some(x=>x[0]===deepService)){setTimeout(()=>openLb(deepService
 
 const lb=$("lb");
 let lastFocus=null;
-function show(){const [id,t,cat,d,v,b]=cur[i];$("lbI").src=`img/full/${id}.webp`;$("lbI").alt="Affiche "+t;$("lbT").textContent=t;$("lbD").textContent=d||"Présentez votre besoin pour recevoir les détails.";$("lbV").innerHTML=`<b>Livrable :</b> ${v||"À définir"} · <b>Budget :</b> ${b||"Sur devis"}`;$("lbA").href=id==="contactez-nous"?wa("Bonjour, je souhaite obtenir un devis."):msg(t,v,b);$("lbCopy").href=serviceUrl(id);$("lbShare").dataset.shareId=id}
+function show(){const [id,t,cat,d,v,b]=cur[i];$("lbI").src=`img/full/${id}.webp`;$("lbI").alt="Affiche "+t;$("lbT").textContent=t;$("lbD").textContent=d||"Présentez votre besoin pour recevoir les détails.";$("lbV").innerHTML=`<b>Livrable :</b> ${v||"À définir"} · <b>Budget :</b> ${b||"Sur devis"}`;$("lbA").href=id==="contactez-nous"?wa("Bonjour, je souhaite obtenir un devis."):msg(t,v,b);$("lbCopy").dataset.shareId=id;$("lbShare").dataset.shareId=id}
 function openLb(id){
   cur=S.filter(s=>!active||active.includes(s[2]));
   let k=cur.findIndex(s=>s[0]===id);
@@ -522,9 +531,27 @@ function openLb(id){
   i=k;lastFocus=document.activeElement;show();lb.showModal();$("lbX").focus();
 }
 const step=d=>{i=(i+d+cur.length)%cur.length;show()};
-document.addEventListener("click",e=>{const b=e.target.closest("button[data-id]");if(b)openLb(b.dataset.id);const share=e.target.closest("button[data-share-id]");if(share){const panel=document.querySelector(`[data-share-panel="${share.dataset.shareId}"]`);document.querySelectorAll(".share-panel.open").forEach(x=>{if(x!==panel)x.classList.remove("open")});panel.classList.toggle("open");share.setAttribute("aria-expanded",panel.classList.contains("open"))}const copy=e.target.closest("button[data-copy-share]");if(copy){navigator.clipboard?.writeText(serviceUrl(copy.dataset.copyShare));copy.textContent="Lien copié";setTimeout(()=>copy.textContent="Copier",1800)}});
+async function copyServiceLink(id,button){
+  const label=button.dataset.originalLabel||button.textContent; button.dataset.originalLabel=label;
+  try{if(!navigator.clipboard?.writeText)throw new Error("clipboard unavailable");await navigator.clipboard.writeText(serviceUrl(id));button.textContent="Lien copié";const feedback=button.closest(".share-panel")?.querySelector(".share-feedback");if(feedback)feedback.textContent="Lien copié dans le presse-papiers."}
+  catch{button.textContent="Copie indisponible";const feedback=button.closest(".share-panel")?.querySelector(".share-feedback");if(feedback)feedback.textContent="Copie impossible. Choisissez un réseau de partage ci-dessus."}
+  setTimeout(()=>button.textContent=label,1800);
+}
+async function shareService(id,button){
+  const item=S.find(x=>x[0]===id)||CONTACT;
+  if(navigator.share){try{await navigator.share({title:item[1],text:`${item[1]} | RISING DIGITAL SOLUTIONS`,url:serviceUrl(id)})}catch(err){if(err?.name!=="AbortError"){const feedback=button.closest(".share-panel")?.querySelector(".share-feedback");if(feedback)feedback.textContent="Le partage natif n’a pas pu s’ouvrir."}}}
+  else await copyServiceLink(id,button);
+}
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("button[data-id]");if(b)openLb(b.dataset.id);
+  const share=e.target.closest("button[data-share-id]");
+  if(share){const panel=document.querySelector(`[data-share-panel="${share.dataset.shareId}"]`),opening=panel.hidden;document.querySelectorAll(".share-panel:not([hidden])").forEach(x=>{x.hidden=true;const trigger=document.querySelector(`[aria-controls="${x.id}"]`);if(trigger)trigger.setAttribute("aria-expanded","false")});panel.hidden=!opening;share.setAttribute("aria-expanded",String(opening))}
+  const copy=e.target.closest("button[data-copy-share]");if(copy)await copyServiceLink(copy.dataset.copyShare,copy);
+  const native=e.target.closest("button[data-native-share]");if(native)await shareService(native.dataset.nativeShare,native);
+});
 $("lbX").onclick=()=>lb.close();
-$("lbShare").onclick=()=>{const id=$("lbShare").dataset.shareId;const item=S.find(x=>x[0]===id);if(navigator.share){navigator.share({title:item?.[1]||"Service RDS",text:`${item?.[1]||"Service"} | RISING DIGITAL SOLUTIONS`,url:serviceUrl(id)}).catch(()=>{})}else window.open(shareLinks(id,item?.[1]||"Service").WhatsApp,"_blank","noopener")};
+$("lbShare").onclick=()=>shareService($("lbShare").dataset.shareId,$("lbShare"));
+$("lbCopy").onclick=()=>copyServiceLink($("lbCopy").dataset.shareId,$("lbCopy"));
 lb.addEventListener("close",()=>{if(lastFocus)lastFocus.focus()});$("lbP").onclick=()=>step(-1);$("lbN").onclick=()=>step(1);
 lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
 document.addEventListener("keydown",e=>{if(!lb.open)return;if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
