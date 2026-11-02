@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://risingdigitalsolutions.pages.dev/sitemap.xml
