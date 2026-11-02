@@ -71,6 +71,22 @@ h1{font-size:clamp(2.1rem,7vw,3.5rem);letter-spacing:-.025em;color:var(--navy)}
 .tagline{font-family:Sora,sans-serif;font-weight:600;font-size:clamp(1.1rem,3vw,1.4rem);color:var(--violet);margin-top:14px}
 .lead{margin-top:18px;max-width:520px;font-size:1.05rem}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.promo-share{position:relative}
+.promo-panel{position:absolute;z-index:40;top:calc(100% + 10px);left:0;width:min(92vw,540px);padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 16px 44px rgba(14,18,56,.2);color:var(--text)}
+.promo-panel[hidden]{display:none}
+.promo-panel-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.promo-panel-head strong{display:block;color:var(--navy);font-family:Sora,sans-serif}
+.promo-panel-head p,.promo-tip{margin:3px 0 12px;font-size:12px;color:#5B6285}
+.promo-close{flex:none;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--navy);font-size:20px;cursor:pointer}
+.promo-label{display:block;margin:8px 0 5px;color:var(--ink);font-size:12px;font-weight:700}
+.promo-caption{display:block;width:100%;min-height:112px;resize:vertical;padding:10px 12px;border:1px solid #C9CEE2;border-radius:9px;background:#F9FAFF;color:var(--text);font:13px/1.5 Inter,system-ui,sans-serif}
+.promo-network-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px;margin-top:12px}
+.promo-network-grid a,.promo-tools button{display:flex;min-height:42px;align-items:center;justify-content:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font:600 13px Inter,system-ui,sans-serif;text-align:center;text-decoration:none;cursor:pointer}
+.promo-network-grid a:hover,.promo-tools button:hover{border-color:var(--violet);color:var(--violet)}
+.promo-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.promo-tools button{flex:1 1 140px;background:var(--mist)}
+.promo-tip{margin:10px 0 0}
+.promo-feedback{min-height:18px;margin:5px 0 0;color:var(--violet);font-size:12px}
 .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start}
 .stack button{padding:0;border:0;background:none;cursor:zoom-in;animation:rise .7s both}
 .stack button:nth-child(2){margin-top:28px;animation-delay:.12s}
@@ -264,6 +280,31 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
       <div class="cta-row">
         <a class="btn btn-wa" data-wa="Bonjour, je souhaite recevoir un devis indicatif pour mon projet." href="https://wa.me/22893392515" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Recevoir un devis indicatif</a>
         <a class="btn services-cta" href="#services">Voir nos services</a>
+        <div class="promo-share" id="promoShare">
+          <button class="btn btn-line" id="promoToggle" type="button" aria-expanded="false" aria-controls="promoPanel">Partager le site</button>
+          <section class="promo-panel" id="promoPanel" aria-labelledby="promoTitle" hidden>
+            <div class="promo-panel-head">
+              <div><strong id="promoTitle">Faites connaître RISING DIGITAL SOLUTIONS</strong><p>Un message prêt à publier pour présenter les services et inviter à demander un devis.</p></div>
+              <button class="promo-close" id="promoClose" type="button" aria-label="Fermer">×</button>
+            </div>
+            <label class="promo-label" for="promoCaption">Message promotionnel</label>
+            <textarea class="promo-caption" id="promoCaption" rows="4" readonly></textarea>
+            <div class="promo-network-grid" aria-label="Partager sur un réseau social">
+              <a data-promo-platform="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a data-promo-platform="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a data-promo-platform="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a data-promo-platform="x" target="_blank" rel="noopener noreferrer">X</a>
+              <a data-promo-platform="telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </div>
+            <div class="promo-tools">
+              <button id="promoCopyText" type="button">Copier le message</button>
+              <button id="promoCopyLink" type="button">Copier le lien</button>
+              <button id="promoNative" type="button">Autres applications</button>
+            </div>
+            <p class="promo-tip">Pour Instagram, copiez le message puis collez-le dans votre publication ou votre story.</p>
+            <p class="promo-feedback" id="promoFeedback" role="status" aria-live="polite"></p>
+          </section>
+        </div>
       </div>
       <div class="trust-row"><span>Réponse rapide sur WhatsApp</span><span>Agbelouvé, Togo</span><span>À distance possible</span></div>
     </div>
@@ -566,6 +607,36 @@ menu.onclick=()=>{const o=nav.classList.toggle("open");menu.setAttribute("aria-e
 nav.onclick=e=>{if(e.target.tagName==="A"){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}};
 const briefForm=$("briefForm");
 if(briefForm)briefForm.onsubmit=e=>{e.preventDefault();const name=$("briefName").value.trim()||"Non précisé";const service=$("briefService").value||"À orienter";const goal=$("briefGoal").value.trim();window.open(wa(`Bonjour, je souhaite démarrer un projet.\nNom/organisation : ${name}\nBesoin : ${service}\nObjectif : ${goal}`),"_blank","noopener")};
+const promoUrl=document.querySelector('link[rel="canonical"]')?.href||location.href;
+const promoMessage="Vous souhaitez développer votre activité ? RISING DIGITAL SOLUTIONS vous accompagne en création de sites web, identité visuelle, intelligence artificielle, automatisation, assistance informatique, impression et formation. Découvrez nos services à Agbelouvé, au Togo et à distance, puis contactez l’équipe pour un devis.";
+const promoCaption=`${promoMessage}\n\n${promoUrl}`;
+const promoPanel=$("promoPanel"),promoToggle=$("promoToggle"),promoFeedback=$("promoFeedback");
+$("promoCaption").value=promoCaption;
+const promoEncodedUrl=encodeURIComponent(promoUrl);
+const promoLinks={
+  whatsapp:`https://wa.me/?text=${encodeURIComponent(promoCaption)}`,
+  facebook:`https://www.facebook.com/sharer/sharer.php?u=${promoEncodedUrl}`,
+  linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${promoEncodedUrl}`,
+  x:`https://twitter.com/intent/tweet?text=${encodeURIComponent(promoMessage)}&url=${promoEncodedUrl}`,
+  telegram:`https://t.me/share/url?url=${promoEncodedUrl}&text=${encodeURIComponent(promoMessage)}`
+};
+document.querySelectorAll("[data-promo-platform]").forEach(link=>link.href=promoLinks[link.dataset.promoPlatform]);
+const closePromo=()=>{promoPanel.hidden=true;promoToggle.setAttribute("aria-expanded","false")};
+promoToggle.onclick=()=>{const opening=promoPanel.hidden;promoPanel.hidden=!opening;promoToggle.setAttribute("aria-expanded",String(opening))};
+$("promoClose").onclick=()=>{closePromo();promoToggle.focus()};
+document.addEventListener("click",e=>{if(!e.target.closest("#promoShare"))closePromo()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!promoPanel.hidden){closePromo();promoToggle.focus()}});
+async function copyPromo(value,success){
+  try{if(!navigator.clipboard?.writeText)throw new Error("clipboard unavailable");await navigator.clipboard.writeText(value);promoFeedback.textContent=success}
+  catch{$("promoCaption").focus();$("promoCaption").select();promoFeedback.textContent="Copie bloquée : le texte ci-dessus est sélectionné, copiez-le manuellement."}
+}
+$("promoCopyText").onclick=()=>copyPromo(promoCaption,"Message promotionnel copié.");
+$("promoCopyLink").onclick=()=>copyPromo(promoUrl,"Lien du site copié.");
+$("promoNative").onclick=async()=>{
+  if(!navigator.share){await copyPromo(promoCaption,"Le partage direct n’est pas disponible ici : message copié.");return}
+  try{await navigator.share({title:"RISING DIGITAL SOLUTIONS",text:promoMessage,url:promoUrl});promoFeedback.textContent="Menu de partage ouvert."}
+  catch(err){if(err?.name!=="AbortError")promoFeedback.textContent="Le menu de partage n’a pas pu s’ouvrir."}
+};
 </script>
 <style>
 .ai-fab{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:28;display:flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:var(--navy);color:#fff;font:600 15px Inter,system-ui,sans-serif;box-shadow:0 8px 24px rgba(14,18,56,.28);cursor:pointer}
