@@ -210,10 +210,12 @@ dialog::backdrop{background:rgba(14,18,56,.8)}
 .legal p+p{margin-top:8px}
 @media(min-width:900px){.brief-wrap{grid-template-columns:.8fr 1.2fr}.brief-form{padding:28px}}
 
-.service-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px;align-items:center}
+.service-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:13px;align-items:stretch}
 .service-actions .btn{min-height:48px;padding:0 13px;font-size:14px}
 .service-actions .btn-wa{min-height:52px;font-size:15px;font-weight:700;color:#fff;white-space:nowrap}
-.share-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 14px/1.3 Inter,system-ui,sans-serif;text-align:center;white-space:normal;cursor:pointer}
+.service-actions .btn,.service-actions .share-btn{display:flex;width:100%;min-width:0;align-items:center;justify-content:center}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 14px/1.3 Inter,system-ui,sans-serif;text-align:center;white-space:nowrap;cursor:pointer}
+.service-actions .share-btn{min-height:52px}
 .share-panel{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}
 .share-panel[hidden]{display:none}
 .share-panel a,.share-panel button{min-height:42px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:600 12px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer}
