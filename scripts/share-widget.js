@@ -1,10 +1,9 @@
 (() => {
-  const mainMenu = document.querySelector(".share-site [data-share-control]");
-  const sourcePanel = mainMenu?.querySelector("[data-share-panel]");
-  const mainTrigger = mainMenu?.querySelector("[data-share-trigger]");
+  const legacyMenu = document.querySelector(".share-site details.share-menu");
+  const sourcePanel = legacyMenu?.querySelector("[data-share-panel]");
 
-  if (!mainMenu || !sourcePanel || !mainTrigger) {
-    console.error("Share controls could not initialize: the site share button or panel is missing.");
+  if (!legacyMenu || !sourcePanel) {
+    console.error("Share controls could not initialize: the original share panel is missing.");
     return;
   }
 
@@ -34,6 +33,12 @@
     menu.append(trigger, panel);
     return menu;
   }
+
+  const mainMenu = createMenu({
+    label: "Partager le site",
+    panelId: "share-site-panel",
+  });
+  legacyMenu.replaceWith(mainMenu);
 
   const floatingMenu = createMenu({
     label: "Partager",

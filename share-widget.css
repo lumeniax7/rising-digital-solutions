@@ -45,7 +45,7 @@
   position: fixed;
   z-index: 30;
   right: 24px;
-  bottom: 72px;
+  bottom: 48px;
 }
 
 .share-fab .share-trigger {
@@ -82,7 +82,7 @@
 @media (max-width: 760px) {
   .share-fab {
     right: max(14px, env(safe-area-inset-right, 0px));
-    bottom: calc(170px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(150px + env(safe-area-inset-bottom, 0px));
   }
 
   .share-fab .share-trigger {
